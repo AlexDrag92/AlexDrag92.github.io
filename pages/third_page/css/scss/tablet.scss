@@ -1,0 +1,198 @@
+@media screen and (max-width: 768px){
+
+	.headerWrapper{
+		h1{
+			text-align: center;
+		}
+
+		nav{
+			position: static;
+			margin-top: $mainValue/2;
+			margin-left: 4.166666666666667%;
+		}
+
+		.headerNav{
+			float: none;
+			margin-right: .5%;
+			text-align: center;
+
+			li{
+				float: none;
+				margin-right: 0;
+				display: inline-block;
+
+			}
+
+			a{
+				font-size: 16px;
+			}
+
+		}
+		
+		.offer{
+			margin-top: $mainValue/2;
+		}
+	}
+
+	.mainWrapper{
+
+		.secondSlogan{
+			width: 90%;
+			margin: $mainValue auto $mainValue;
+			@include customFont('Open Sans Regular', 15px, $mainColor1, 150%);
+		}
+		.block{
+			width: 47.3%;
+		}
+
+
+		.forThreeElem{
+			.threeElem{
+				margin-top: $mainValue;
+				width: 50%;				
+				&:first-of-type{
+					float: none;
+					width: 100%;
+					padding: 0 1%;
+					margin: 0 auto;
+				}
+			}
+		}
+
+		.imgProd{
+			.imgWrap{
+				&:before{
+					content: ' ';
+					position: absolute;
+					display: block;
+					width: 100%;
+					height: 100%;
+
+					background: rgba(145,30,66, .5);
+
+				}
+				figcaption{
+					left: 50%;
+					opacity:1;
+				}
+			}
+		}
+
+		.services{
+			.information{
+				font-size: 14px;
+				padding: 0 2px;
+			}
+		}
+		
+		.plan{
+			.priceBlock{
+				ul.lists{
+					li{
+						width: 85%;
+					}
+				}
+				&:last-of-type{
+					float: none;
+					margin: 0 auto;
+				}
+			}
+		}
+
+		.moreInfo{
+			
+			.imgAndTxtWrapp{
+				&:nth-child(2){
+					.imgBlock.block{
+						float: none;
+					}
+				}
+				
+				
+
+				.imgBlock{
+					width: 450px;
+					max-width: 97.5%;;
+					margin: 0 auto;
+					position: static;
+					float: none;
+
+					&:nth-child(2){
+						float: none;
+						position: static;
+					}
+				}
+
+				.textBlock{
+					width:  97.5%;
+					padding: $mainValue 0;
+					position: static;
+					transform: none;
+				}
+
+				.aboutImg{
+					font-size: 14px;
+
+				}
+			}	
+		}
+	
+		.plan .priceBlock .workLinks{
+			margin: $mainValue/2 0;
+
+		}
+		
+		.works{
+			.workLinks{
+				&:last-of-type{
+					margin-top: 25px;
+				}
+			}
+		}
+
+		.contact{
+			.threeElem{
+				&:first-child{
+					p.contInfo{
+						margin-bottom: 0;
+					}
+				}
+			}
+
+
+			form{
+				input, textarea{
+					text-indent: 1em;
+					@include customFont('Open Sans Regular', 16px, $mainColor1);
+					background: $mainColor2;
+					height: 50px;
+
+				}
+				input[type="text"], input[type="email"]{
+					font-size: inherit;
+					height: 50px;
+				}
+				textarea{
+					width: 97.5%;
+					height: 100px;
+					padding-top: 1em;
+				}
+
+				input[type="submit"]{
+					width: 47.3%;
+					height: 50px;
+					text-indent: 0;
+				}
+
+
+
+			}
+
+		}
+
+	}
+
+
+
+
+}

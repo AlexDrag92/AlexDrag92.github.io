@@ -1,0 +1,570 @@
+$mainWhite:#FEFEFE;
+$mainRed:#FF4E50;
+$mainGrey: #979797;
+$mobButtonWidth: 275px;
+
+@mixin mainFonts($size:1em, $family:Calibri, $color:#000, $weight:normal){
+	font:{
+		style: normal;
+		variant: normal;
+		weight:$weight;
+		size: $size;
+		family: $family, sans serif;	
+	}
+	line-height: 100%;
+	color:$color;
+}
+
+@mixin linkButtonMob($width, $bgCol:#ddd, $col:#000 ){
+	max-width: $width;
+	width: 85.9375%;
+	border-radius: 25px;
+	background-color: $bgCol;
+	color: $col;
+	border: 2px solid $col;
+	box-sizing:border-box;
+	padding: 14px;
+	text-align: center;
+
+	&:hover{
+		background: $mainRed;
+		color: lighten($mainRed, 50%);
+	}
+	@if $col == $mainWhite{
+		border-width: 0px;
+		&:hover{
+			color: darken($col, 20%);
+			background: darken($bgCol, 50%);
+		}
+	};
+	
+	transition: color .3s, background .5s ; 
+}
+
+
+@keyframes textmove{
+	from { 
+		top: 50%;
+	}
+	20%{
+		top: 40%;
+	}
+	60%{
+		top: 60%;
+	}
+	to {
+		top: 50%;
+	}
+}
+
+
+.mainWrapper{
+	min-width: 200px;
+	margin: 0 auto;
+}
+
+.wrapper{
+	padding: 0 10px;
+}
+
+.headerWrapper {
+	background: url('../img/city_mob.png');
+	background-repeat: no-repeat;
+	background-position: center 0;
+
+	header{
+		position: relative;
+		text-align: center;
+		padding-top: 40px;
+		@include mainFonts(inherit, 'Montserrat', $mainWhite);
+
+		.login{
+			display: inline-block;
+			position: relative;
+			top:-25px;
+		}
+
+		.logUp, .singIn{
+			@include mainFonts(0.875em, 'Montserrat', $mainWhite, bold);
+			&:hover{
+				color: $mainGrey;
+				border-color: $mainGrey;
+				transition: border-color .2s, color .6s;
+			}
+		}
+
+		.singIn{
+			margin-left: 10px;
+			padding: 5px 14px 8px;
+			border: 2px solid $mainWhite;
+			border-radius: 20px;
+		}
+
+		.insideForm{
+			display: none;
+			position: absolute;
+			right: 0;
+			top: 70px;
+			width: 100%;
+			max-width: 520px;
+			background: rgba(255,255,255,.8);
+			border-radius: 10px;
+			
+			.headerCloser{
+				content:'close';
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				display: block;
+				width: 30%;
+				max-width: 60px;
+				padding: 4px;
+				border-radius: 10px;
+				background: $mainRed;
+				cursor: pointer;
+				transition: background .4s;
+
+				&:hover{
+					background: #000;
+				}
+			}
+
+
+			input{
+				display: block;
+				margin: 10px auto;
+				padding: 8px;
+				border-radius: 5px;
+				border: 1px solid $mainGrey;
+				width: 85.9375%;
+				max-width: $mobButtonWidth;
+				font-family: 'Numans';
+				color: $mainGrey;
+				font-size: .8em;
+			}
+
+			input[type="submit"]{
+				@include linkButtonMob($mobButtonWidth, $mainRed, $mainWhite);
+				cursor: pointer;
+			}
+		}
+
+		.companyNameHeader{
+			position: relative;
+			top: 130px;
+			@include mainFonts(1.25em, 'Montserrat', $mainWhite, bold);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+		.slogan{
+			margin-top: 150px;
+			@include mainFonts(1.875em, 'Montserrat', $mainWhite ,bold);/*30*/
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+		}
+
+		.phrase{
+			margin: 0 auto;
+			margin-top: 20px;
+			@include mainFonts(1.125em, 'Numans', $mainWhite);/*18xp*/
+			line-height: 140%;
+			font-weight: normal;
+		}
+
+		.find{
+			display: inline-block;
+			margin: 15px auto 60px;
+			@include linkButtonMob($mobButtonWidth, $mainRed, $mainWhite);
+			@include mainFonts(1em, 'Numans', $mainWhite);
+		}
+	}
+}
+
+
+.main{
+	margin: 0 auto 10px;
+	h2.sectionName{
+		margin: 30px 0 17px;
+		@include mainFonts(1.375em, 'Montserrat', #000, bold);/*22px*/
+		text-align: center;
+	}
+
+	/*first section*/
+	.step1{background: url('../img/city1_dark.jpg');}
+	.step2{background: url('../img/city2_dark.jpg');}
+	.step3{background: url('../img/city3_dark.jpg');}
+
+	.step{
+		margin-bottom: 10px;
+		padding: 100px 6.6666667% 20px;
+		border-radius: 5px;
+		background-size: cover;
+
+		background-repeat: no-repeat;
+		background-position: center 1%;
+		h3.stepName{
+			@include mainFonts(1.5em, 'Montserrat',$mainWhite, bold);
+		}
+		.info{
+			margin-top: 25px;
+			@include mainFonts(.875em, 'Numans', $mainWhite);
+			color: lighten($mainGrey, 25%);
+		}
+	}
+
+	/*second section*/
+	.person{
+		img, .name, q{
+			display: block;
+			margin: 0 auto 15px;
+			text-align: center;
+		}
+		img{
+			width:40%;
+			max-width:100%;
+			margin-bottom: 20px;
+			border-radius: 50%;
+			&:hover{ 
+				filter: grayscale(80%);
+			}
+		}
+
+		.name{
+			@include mainFonts(.873125em, 'Montserrat', #000,bold);/*13.94px*/
+		}
+		.quote{
+			@include mainFonts(.873125em, 'Numans', $mainGrey);/*13.94px*/
+			line-height: 120%;
+		}
+	}
+
+	.linkIn2Section{
+		display: block;
+		margin: 20px auto;
+
+		padding: 8px 10px;
+		@include mainFonts(.875em, 'Montserrat', inherit, bold);/*14px*/
+		@include linkButtonMob($mobButtonWidth, $mainWhite, $mainRed);
+	}
+
+	/*third  section*/
+	.bigLink1{background: url('../img/for_link1_dark.jpg');}
+	.bigLink2{background: url('../img/for_link2_dark.jpg');}
+	.bigLink3{background: url('../img/for_link3_dark.jpg');}
+	.bigLink4{background: url('../img/for_link4_dark.jpg');}
+	.bigLink5{background: url('../img/for_link5_dark.jpg');}
+	.bigLink6{background: url('../img/for_link6_dark.jpg');}
+	.bigLink7{background: url('../img/for_link7_dark.jpg');}
+
+	.bigLink{
+		display: block;
+		margin-bottom: 10px;
+		padding: 45px 0;
+		text-align: center;
+		background-position: center;
+		background-size: 120%;
+		background-repeat: no-repeat;
+		@include mainFonts(1.375em, 'Montserrat', $mainWhite,bold);/*22px*/
+		border-radius: 10px;
+	}
+
+
+
+	/*fourth section*/
+	.formText{
+		margin:20px 0 15px;
+		display: block;
+		@include mainFonts(1.125em, 'Numans', $mainGrey);/*18px*/
+		text-align: center;
+	}
+
+	input[type="text"]{
+		display:block;
+		width: 85.9375%-6;
+		max-width: $mobButtonWidth;
+		margin: 0 auto 10px;
+		padding: 8px;
+		@include mainFonts(.875em, 'Numans');/*14px*/
+		border: 1px solid $mainGrey;
+		border-radius: 5px;
+		color: $mainGrey;
+		box-shadow: 0px 2px 8px $mainGrey;
+	}
+
+	input[type="submit"]{
+		display: block;
+		margin: 15px auto 10px;
+		@include linkButtonMob($mobButtonWidth,  $mainRed, $mainWhite);
+		@include mainFonts(.875em, 'Montserrat', $mainWhite);/*14px*/
+
+	}
+}
+
+.footerWrapper{
+	margin-top: 50px;
+	border: none;
+	border-top: 4px solid  $mainRed;
+	border-bottom: 4px solid  $mainRed;
+
+	.companyFoot{
+		margin: 20px auto 10px;
+		@include mainFonts(1.125em, 'Montserrat', $mainRed, bold);
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+	}
+
+	.company, .partners{
+		@include mainFonts(.875em, 'Montserrat', #000, bold);
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	.footerNavigation{
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	.footerNavigation li{
+		display: inline-block;	
+	}
+
+	.footerNavigation a, 
+	.partnersList a{
+		@include mainFonts(1em, 'Numans', $mainGrey);
+	}
+
+	.partnersList{
+		text-align: center;
+		li{
+			margin-bottom: 5px;
+		}
+	}
+}
+
+/*Tablet*/
+@media all and(min-width:590px){
+	.headerWrapper{
+		background: url('../img/city_tab.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		header{
+			width: 87.5%;/*672 / 768 */
+			margin: 0 auto;
+			.login, .companyNameHeader{
+				position: absolute;
+				top:50px;
+			}
+			.login{
+				right:0;
+				.singIn, .logUp{
+					font-size: 1.25em;
+				}
+			}
+
+			.insideForm{
+				top: 100px;
+			}
+			.companyNameHeader{
+				left: 0;
+				font-size: 1.5625em;/*25*/
+			}
+			.slogan{
+				margin-top: 185px;
+				font-size: 3.248125em;
+				line-height: 130%;
+				letter-spacing: 2px;
+			}
+
+			.phrase{
+				font-size: 1.40em;
+			}
+			.find{
+				margin: 30px 0 230px;
+				font-size: 1.1em;
+			}		
+		}
+	}
+
+	.main{
+		h2.sectionName{
+			margin: 100px 0 30px;
+			font-size: 2.2em;
+		}
+		.firstSection{
+			margin: 0 -10px;
+			&:after{
+				content: '.';
+				display: block;
+				clear:both;
+			}
+		}
+
+		.step{
+			position: relative;
+			width: 28.38541666666667%;
+			height: 400px;
+			margin: 0 1.302083333333333%;
+			padding: 1.171875%;
+
+			float: left;
+
+			.stepContent{
+				position: absolute;
+				top: 45%;
+				font-size: 1.3em;
+			}
+			h3.stepName{
+				font-size: 1.2em;
+			}
+		}
+		.secondSection{
+			.persons{
+				width: 66.84491978609626%;/*66.84491978609626%*/
+				max-width: 500px;
+				margin:0 auto;
+
+				&:after{
+					width: 0;
+					height: 0;
+					content: '';
+					display: block;
+					clear:both;
+				}
+			}
+			.person{
+				width: 40%;/*200px*/
+				height: 240px;
+				margin: 0 5% 50px;/*25*/
+
+				font-size: 1.25em;
+				float:left;
+
+				img{
+					width: 60%;
+					max-width: 120px;
+					min-width: 90px;
+				}
+			}
+			.linkIn2Section{
+				margin-top: 20px;
+			}
+		}
+		.thirdSection{
+			margin: 0 -10px -10px;
+			&:after{
+				content: '';
+				display: block;
+				clear:both;
+			}
+			.bigLink{
+				width: 28.38541666666667%;/*28,38541666666667% | 218px*/
+				height: 310px;
+				margin: 10px 1.302083333333333%;/*1,302083333333333% | */
+				padding: 1.171875%;/*1,171875%*/
+				background-size: auto;
+				float:left;
+				transition: box-shadow .4s, color .2s;
+				&:hover{
+					box-shadow: 0px 0px 5px 5px $mainRed;
+					color: $mainRed;
+
+					.textLink{
+						animation-name: textmove;
+						animation-duration: .7s;
+						animation-delay: .1s;
+					}
+				}
+			}
+			.bigLink5, .bigLink6{
+				width: 61.71875%;
+				background-size: 200%;
+			}
+			.textLink{
+				position: relative;
+				display: inline-block;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 1.1em;
+				line-height: 105%;
+				&:hover{
+					animation-name: textmove;
+					animation-duration: 2s;
+				}
+
+			}
+		}
+	}
+	.fourthSection{
+		.formText{
+			font-size: 1.5em;
+		}
+		form{
+			text-align: center;
+			input[type="text"]{
+				width: 240px;
+				height: 30px;
+				margin-right: 25px;
+				display: inline-block;
+			}
+
+			input[type="submit"]{
+				width: auto;
+				height: 45px;
+				padding: 10px 20px;
+				display: inline-block;
+			}
+		}
+	}
+	.footerWrapper{
+		&:after{
+			content: '';
+			display: block;
+			clear:both;
+		}
+
+		footer{
+			.companyFoot, .navigationList, .partnersList{
+				float:left;
+				margin: 30px 5.208333333333333%;
+
+			}
+
+			nav.footerNavigation li{
+				display: block;
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
+@media all and (min-width:769px){
+	.headerWrapper{
+		background: url('../img/city.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin: 0 auto;
+		header{
+			max-width: 960px;
+			margin: 0 auto;
+		}
+	}
+	.main{
+		max-width: 960px;
+		.secondSection{
+			.persons{
+				width: 100%;
+				max-width: 100%;
+				.person{
+					width: 23%;
+					margin: 0 1%;
+				}
+			}
+		}
+	}
+	footer{
+		max-width: 960px;
+		margin: 0 auto;
+	}
+}

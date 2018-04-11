@@ -1,0 +1,664 @@
+$mainColor1: #911e42;
+$mainColor2: #fffafa;
+
+$mainValue: 50px;
+
+@mixin customFont($family:'Open Sans Regular', $size: 16px, $color:$mainColor1, $lineHeight:100%){
+	font:{
+		family: $family, sans-serif;
+		size: $size;
+	};
+	color: $color;
+	line-height: $lineHeight;
+}
+
+@mixin placeholderStyles($fs:15px, $indent:auto, $pt:auto){
+	@include customFont(inherit, $fs, lighten($mainColor1, 25%));
+	text-indent: $indent;
+	padding-top: $pt;
+}
+
+@keyframes arrayDown {
+	0%{ 
+		padding-top: 0;
+		margin-bottom: $mainValue;
+	}
+
+	100%{ 
+		padding-top: $mainValue;
+		margin-bottom: 0;
+	}
+}
+
+.generalWrapper{
+	background: $mainColor2;
+	margin: 0 auto;
+	min-width: 300px;
+	
+}
+
+.section{
+	max-width: 1750px;
+	margin: 0 auto;
+}
+
+.headerWrapper{
+	@include customFont();
+	margin: 0 auto;
+	
+	header{
+		position: relative;
+		padding-top: $mainValue;
+
+		margin: 0 auto;
+	}
+	h1{
+		@include customFont('Open Sans Bold', 25px);
+		margin-left: 8.214285714285715%;
+	}
+	nav{
+
+		position: absolute;
+		top: 55px;
+		right: 8.214285714285715%;
+		@include customFont('Open Sans bold', 20px);
+	}
+
+	.menuButton{
+		display: none;
+	}
+
+	.headerNav{
+		float: right;
+		&:after{
+			content: '';
+			display: block;
+			clear: both;
+		}	
+	}
+	li{
+		float: left;
+		margin-right: 10px;
+		&:last-child{
+			margin-right: 0px;
+		}
+
+		a{
+			padding: 0 3px;
+			color: $mainColor1;
+
+			border: 2px solid transparent;
+
+			border-radius: 0 15px 0 0;
+			transition: border-color .5s, color .6s, background .3s;
+			
+			&:hover{
+				border: 2px solid red;
+				border-color: $mainColor1;
+				background: $mainColor1;
+				color: $mainColor2;
+			}
+		}
+
+		form{
+			position: relative;
+			.ti-search{
+				position: absolute;
+				top: 50%;
+				right: 5px;
+				transform: translateY(-50%);
+				color: $mainColor1;
+			}
+			
+			input[type="text"]{
+				width: 120px;
+				background: transparent;
+				border:0px;
+				padding: 3px;
+				&:focus{
+					outline: none;
+				}
+			}
+
+
+			::-webkit-input-placeholder { @include placeholderStyles();}
+			:-moz-placeholder {@include placeholderStyles();}
+			::-moz-placeholder {@include placeholderStyles();}
+			:-ms-input-placeholder {@include placeholderStyles();}
+			::-ms-input-placeholder {@include placeholderStyles();}
+		}
+	}
+	.offer{
+		margin-top: $mainValue;
+		padding-top: $mainValue*3;
+		background:url('../img/city2_cherry.jpg');
+		text-align: center;
+
+		.slogan, .sublogan{
+			@include customFont('Open Sans bold', 60px, $mainColor2);
+			text-align: center;
+		}
+		.sublogan{
+			@include customFont('Open Sans Regular', 20px, $mainColor2);
+			margin-top: 20px;
+		}
+
+		a.headerLink{
+			display: inline-block;
+			@include customFont('Open Sans Bold', 20px, $mainColor2);
+			width: 170px;
+			margin: $mainValue+30 5px;
+			padding: 10px;
+			text-align: center;
+			text-transform: uppercase;
+			border: 2px solid $mainColor2;
+			transition: background .4s, border-color .8s;
+			
+			&:hover{
+				background: $mainColor1;
+				border-color: $mainColor1;
+			}
+			
+		}
+
+		a.anchor{
+			position: relative;
+			display: inline-block;
+			margin-bottom: $mainValue -20;
+			padding: 0 0 $mainValue +20;
+			color: $mainColor2;
+			font-size: 30px;
+			font-weight: bold;
+
+			
+			animation-name: arrayDown;
+			animation-duration: .9s;
+			animation-timing-function: cubic-bezier(0.880, 0.025, 0.605, 0.185);
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			
+
+			&:hover{
+				animation-play-state: paused;
+			}
+		}
+	}
+}
+.mainWrapper{
+	section{
+		padding: $mainValue 0;
+	}
+
+	h2, h3, .secondSlogan, .logo, .information{
+		text-align: center;
+	}
+
+	h2{
+		@include customFont('Open Sans Bold', 25px, $mainColor1);
+
+	}
+	h3{
+		@include customFont('Open Sans Bold', 17px, $mainColor1);
+		margin-top: $mainValue/2;
+	}
+	.elementsWrapp{
+		width: 83.57142857142857%;
+		position: relative;
+		margin: 0 auto;	
+
+		&:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
+	.contain{
+		margin: 0  -1.34%;
+
+		&:after{
+			display: block;
+			content: '';
+			clear: both;
+		}
+	}
+
+	.block{
+		float: left;
+		width: 30.62393162393162%;
+		box-sizing: border-box;
+		margin: 0 1.34% 15px;
+	}
+	.secondSlogan{
+		width: 83.57142857142857%;
+		margin: $mainValue auto $mainValue;
+		@include customFont('Open Sans Regular', 20px, $mainColor1, 150%);
+	}
+	.logo{
+		margin-top: $mainValue;
+		display: block;
+		font-size: 50px;
+		color: $mainColor1;
+	}
+	.information{
+		margin: $mainValue/2 0 0 0;
+		@include customFont('Open Sans Regular', 16px, $mainColor1, 150%);
+	}
+	.workLinks{
+		display: inline-block;
+		margin-right: 5px;
+		@include customFont('Open Sans Bold', 16px, $mainColor1);
+		padding: 8px 14px;
+		border: 2px solid $mainColor1;
+		text-transform: uppercase;
+		margin-bottom: $mainValue;
+		transition: .5s;
+
+		&:last-of-type{
+			margin: $mainValue auto 0;
+		}
+
+		&:hover{
+			background: $mainColor1;
+			color: $mainColor2;
+		}
+	}
+	.forThreeElem{
+		width: 83.57142857142857%;
+		margin:0 auto;
+
+		&:after{
+			display: block;
+			content: '';
+			clear: both;
+		}
+
+		.threeElem{
+			float: left;
+			width: 33.33333333333333%;
+			padding: 0 2%;
+			box-sizing: border-box;
+
+			.logo{
+				margin-top: 0;
+			}
+		}
+	}
+/*!!!!!!!!!!!
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!*/
+	.servicesWrapper{
+		background: $mainColor1;
+		
+		margin: 0 auto;
+	}
+	.services{
+		//background: $mainColor1;
+
+
+		h2{
+			color: $mainColor2;
+		}
+
+		.secondSlogan{
+			color: $mainColor2;
+		}
+
+		.serve{
+			position: relative;
+			
+			height: 430px;
+			padding: 0 .7%;
+
+			background: $mainColor2;
+			box-shadow: 0 0 10px lighten($mainColor2, 20%);
+			transition: .4s box-shadow;
+			float: left;
+
+			&:hover{
+				box-shadow: 0 0 20px lighten($mainColor2, 20%);
+			}
+
+			a{
+				@include customFont('Open Sans Bold', 20px, $mainColor1);
+				position: absolute;
+				bottom: $mainValue/2;
+				left: 50%;
+				transform: translateX(-50%);
+				display: block;
+				width: 150px;
+				margin: 0 auto;
+				padding: 10px;
+				border: 2px solid $mainColor1;
+				text-align: center;
+				transition: border-color .5s, color .6s, background .3s;
+
+
+				&:hover{
+					border: 2px solid red;
+					border-color: $mainColor1;
+					background: $mainColor1;
+					color: $mainColor2;
+				}
+			}
+		}
+	}
+	.works{
+		text-align: center;
+	}
+	.imgProd{
+		position: relative;
+		
+		.imgWrap{
+			position: relative;
+			box-shadow: 0 0 10px 3px $mainColor1;
+			transition: box-shadow .4s;
+
+			&:hover{
+				box-shadow: 0 0 10px 3px darken($mainColor1, 50%);
+			}
+			
+			&:hover{
+				&:before{
+					content: ' ';
+					position: absolute;
+					display: block;
+					width: 100%;
+					height: 100%;
+
+					background: rgba(145,30,66, .8);
+
+				}
+				
+				figcaption{
+					opacity: 1;
+					left: 50%;
+				}
+			}
+			
+
+			img{
+				width: 100%;
+				display: block;
+			}
+
+			figcaption{
+				position: absolute;
+				top: 50%;
+				left: 20%;
+				transform: translate(-50%, -50%);
+
+				opacity: 0;
+
+				transition: .5s;
+			}
+
+			.prodName{
+				@include customFont('Open Sans Bold', 17px, $mainColor2);
+			}
+			.descrip{
+				@include customFont('Open Sans Regular', 14px, $mainColor2);
+			}
+		}
+	}
+
+	.planWrapper{
+		background: $mainColor1;
+	}
+	.plan{
+		.contain{
+			perspective: 600px;
+			.priceBlock{
+				&:hover{
+					transform: translateZ(20px);
+				}
+			}
+		}
+
+		h3{
+			@include customFont('Open Sans Regular', 17px);
+			letter-spacing: 2px;
+		}
+		
+		h2, h3, .secondSlogan, .price>span{
+
+			color: $mainColor2;			
+		}
+
+
+
+		.priceBlock{
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+			background: $mainColor2;
+
+
+			box-shadow: 0 0 15px 5px #5D2F2F;
+			transition: .4s;
+
+			&:before{
+				width: 150%;
+				height: 40%;
+				content: ' ';
+				background: #ED487C;
+				display: block;
+				position: absolute;
+
+				transform: rotate(-4deg);
+				top: -50px;
+				left: -20px;
+				z-index: -1;
+			}
+
+			&:hover{
+				box-shadow: 0 0 40px 20px #5D2F2F; 
+			}
+			
+			.price{
+				
+				font-size: 14px;
+				@include customFont('Open Sans Regular', 16px, $mainColor1);
+				text-align: center;
+				margin: $mainValue/2 0 ;
+
+				
+
+
+				.ti-money{
+					
+					font-size: 14px;
+				}
+
+				.num{
+					font-size: 30px;
+					font-weight: bold;
+					z-index: 1;
+				}
+
+			}
+
+			ul.lists{
+
+				li{
+					width: 50%;
+					margin: 0 auto;
+					text-align: center;
+					padding: 15px 0 5px;
+					@include customFont('Open Sans Regular', 16px, $mainColor1);
+					border-bottom: 1px solid $mainColor1;
+
+				}
+			}
+
+
+			.workLinks{
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+				display: inline-block;
+				margin-bottom: $mainValue;
+			}
+		}
+	}
+	
+	.moreInfo{
+		text-align: center;
+		.contain{
+			h3{
+				margin-top: 0;
+				margin-bottom: $mainValue/2;
+			}
+			.imgAndTxtWrapp{
+				position:relative;
+				&:after{
+					content:'';
+					display: block;
+					clear: both;
+				}
+
+				&:nth-child(2){
+					.textBlock{
+						left: 0;	
+					}
+					.imgBlock{
+						position: relative;
+						float: right;
+					} 
+				}
+			}
+			.block{
+				margin-bottom: 0;
+			}
+			
+			.imgBlock{
+				box-shadow: 0px 0px 5px 5px $mainColor1;
+			}
+
+			.imgBlock, .textBlock{
+				width: 47.3%;
+				
+			}
+			.textBlock{
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				text-align: justify;
+			}
+
+			img{
+				max-width: 100%;
+				display: block;
+			}
+
+			.aboutImg{
+				@include customFont('Open Sans Regular', 16px, $mainColor1);
+				line-height: 150%;
+			}
+		}
+
+
+	}
+	
+	.contactWrapper{
+		background: $mainColor1;
+	}
+
+	.contact{
+		
+		h2,.secondSlogan, .contInfo{
+			color: $mainColor2;
+			margin-bottom: $mainValue;
+
+		}
+		.threeElem{
+			text-align: center;
+		}
+		.logo{
+			display: inline-block;
+			width: 100px;
+
+			color: $mainColor2;
+			margin-top: 0;
+			background: #ED487C;
+			border-radius: 50%; 
+			line-height: 200%;
+			text-align: center;
+		}
+		.contInfo{
+			@include customFont('Open Sans Bold', 18px, $mainColor2);
+			margin-top: $mainValue/2;
+		}
+		form{
+			&:after{
+					content:'';
+					display: block;
+					clear: both;
+				}
+			input, textarea{
+				border: none;
+				border-radius: 10px;
+				@include customFont('Open Sans Bold', 18px, $mainColor1);
+				text-indent: 1em;
+				background: $mainColor2;
+				&:focus{
+					outline: none;  
+				}
+			}
+			input[type="text"], input[type="email"]{
+				display: block;
+				float: left;
+				width: 47.3%;
+				height: 70px;
+			}
+			textarea{
+				width: 97.5%;
+				height: 100px;
+				resize: none;
+				padding-top: 1em;
+			}
+
+			input[type="submit"]{
+				float: right;
+				width: 14.64387464387464%;
+				height: 70px;
+				text-indent: 0;
+				cursor: pointer;
+				transition: .7s;
+				
+				box-shadow: 0 0 10px 5px darken($mainColor1, 10%);
+
+				&:hover{
+					color: $mainColor2;
+					background: #ED487C;
+				} 
+			}
+
+			::-webkit-input-placeholder { @include placeholderStyles(22px, 1em);}
+			:-moz-placeholder {@include placeholderStyles(22px, 1em);}
+			::-moz-placeholder {@include placeholderStyles(22px, 1em);}
+			:-ms-input-placeholder {@include placeholderStyles(22px, 1em);}
+			::-ms-input-placeholder {@include placeholderStyles(22px, 1em);}
+
+		}
+	}
+}
+
+.footerWrapper{
+	.footerPar{
+		padding: $mainValue/2 0;
+		text-align: center;
+		@include customFont();
+	}
+}
+
+
+@import 'tablet.scss';
+@import 'mob_large.scss';
+@import 'mob_small.scss';
+

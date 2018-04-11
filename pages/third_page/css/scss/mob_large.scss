@@ -1,0 +1,167 @@
+@media screen and (max-width:480px){
+	.headerWrapper{
+		position: static;
+
+		header{
+			padding-top: 25px;
+			position: static;
+			h1{
+				margin: 0 ; 
+			}
+		}
+		nav{
+			z-index: 4;
+			display: none;/*!*/
+			width: 100%;
+			background: $mainColor2;
+			position: fixed;
+			margin: 0;
+			top: 0;
+			right: 0;
+			padding-bottom: 10px;
+			border-bottom: 5px solid $mainColor1;
+
+
+			.headerNav{
+				margin-top: 20px;
+
+				li{
+					display: block;
+					padding: 0;
+					a{	
+						display: block;
+						padding: 10px;
+						border: none;
+						&:hover{
+							background: transparent;
+							border: none;
+							color: inherit;
+						}
+					}
+					
+					form{
+
+						input{
+							margin: 0 auto;
+							text-align: center;
+						}
+
+						.search{
+							position: absolute;
+							right: 30%;
+						}
+					}
+				}
+			}
+		}
+		.menuButton{
+			display: block;
+			z-index: 5;
+			position: fixed;
+			width: 30px;
+			height: 30px;
+			top: 10px;
+			right:10px;
+			background: $mainColor1;
+			padding: 10px;
+			border-radius: 10px;
+			border: 1px solid $mainColor2;
+			
+
+			.show, .close {
+				position: absolute;
+				font-size: 30px;
+				transition: opacity .5s;
+				color: $mainColor2;
+			} 
+
+			.close{
+				opacity: 0;
+				font-weight: bold;
+				color: $mainColor1;
+			}
+
+		}
+		.offer{
+			a.headerLink{
+				width: 42%;
+				display: block;
+				padding: 5px;
+				font-size: 18px;
+				margin: $mainValue/2 auto $mainValue/2;
+			}
+		}
+	}
+
+	.mainWrapper{
+		.forThreeElem{
+			.threeElem{
+				margin-top: $mainValue;
+				float: none;
+				width: 100%;
+				padding: 0 1%;
+
+				.information{
+					padding: 0 1%;
+				}
+			}
+		}
+
+		.block, .services .serve{
+			width: 300px;
+			max-width: 100%;
+			float: none;
+
+			height : auto;
+			margin: 15px auto;
+		}
+
+		.workLinks:last-of-type{
+			margin-top: 0;
+		}
+
+		.services .serve{
+
+			padding: $mainValue/2 1%;
+
+			.logo{
+				margin-top: 0;
+			}
+			.serLink{
+				position: static;
+				margin: $mainValue auto 0;
+				transform: none;
+				float: none;
+			}
+		}
+
+		.contact{
+			.threeElem{
+				&:first-child{
+					p.contInfo{
+						margin-bottom: 0;
+					}
+				}
+			}
+
+
+			form{
+				input, textarea{
+					margin: 0 1.34% 15px;
+				}
+				
+				::-webkit-input-placeholder { @include placeholderStyles(16px, 1em);}
+				:-moz-placeholder {@include placeholderStyles(16px, 1em);}
+				::-moz-placeholder {@include placeholderStyles(16px, 1em);}
+				:-ms-input-placeholder {@include placeholderStyles(16px, 1em);}
+				::-ms-input-placeholder {@include placeholderStyles(16px, 1em);}
+
+			}
+
+		}
+
+	}
+	
+
+
+}

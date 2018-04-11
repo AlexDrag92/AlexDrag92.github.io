@@ -1,0 +1,23 @@
+@media screen and (max-width:320px) {
+	.contact{
+		.threeElem{
+			&:first-child{
+				p.contInfo{
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		form.bottomForm.contain{
+			input, textarea{
+				width: 100%;
+				float: none;
+				margin: 15px 0;
+			}
+
+			textarea{
+				margin-top: 0;
+			}
+		}
+	}
+}
