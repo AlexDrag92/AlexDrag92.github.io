@@ -4,7 +4,7 @@ var switchForm = 0;
 var close =  document.querySelector('#headerCloser');
 
 function ShowHideForm(linkButton, hiddenForm, switcher, closer){ 
-	linkButton.onclick = function onOff(){ 
+	linkButton.onclick = function onOff(event){ 
 		event.preventDefault(); 
 		if(switcher==0){ 
 			hiddenForm.style.display = 'block';
@@ -18,7 +18,7 @@ function ShowHideForm(linkButton, hiddenForm, switcher, closer){
 			switcher = 0; 
 		}; 
 	}; 
-	closer.onclick = function onOff(){ 
+	closer.onclick = function onOff(event){ 
 		event.preventDefault(); 
 		if(switcher==0){ 
 			hiddenForm.style.display = 'block'; 
