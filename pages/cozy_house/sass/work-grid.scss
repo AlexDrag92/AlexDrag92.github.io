@@ -1,0 +1,28 @@
+.page-wrapper,
+.page-header,
+.company-info,
+.navigation,
+.about-section,
+.donation-section
+{
+  background: rgba(50,100,60,.4);
+}
+
+.promo-section,
+.help-section,
+.pets-carousel,
+.help-list,
+.help-list__item,
+.donation-section__contain-wrapper
+{
+  background: rgba(50,50,120,.4);
+}
+
+.pets-carousel{
+  outline: 1px solid #000;
+}
+
+
+[class*="__contain-wrapper"]{
+  outline: 1px solid gold;
+}

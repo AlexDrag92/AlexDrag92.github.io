@@ -1,0 +1,81 @@
+.pets-carousel{
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+
+}
+
+.pets-carousel__animal-cards-wrapper{
+  position: relative;
+  overflow-x: scroll;
+  
+}
+
+.pets-carousel__animal-cards{
+  @include clearfix();
+  position: relative;
+  left: 0;
+  margin: 0 auto;
+  width: 2545px;
+
+  transition: left .4s;
+}
+
+.pets-carousel .arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  outline: none;
+  
+
+  background-image: url('../img/icons/icons_sprite.png');
+
+  &-left{
+    left: -55px;
+    background-position: 15px -1918px;
+  }
+
+  &-right{
+    right: -55px;
+    background-position: 15px -2025px;
+  }
+
+  &:hover{
+    background-color: $color1;
+  }
+  
+}
+
+
+@media #{$large-media-query}{
+  .pets-carousel{
+    max-width: 595px;
+    .arrow{
+      &-left{
+        left: calc(2% + 10px);
+      }
+
+      &-right{
+        right: calc(2% + 10px);
+      }
+    }
+  }
+}
+
+
+@media #{$medium-media-query}{
+  .pets-carousel{
+    max-width: 270px;
+    .arrow{
+      background-color: $color1;
+      &-left{
+        left: 10px;
+      }
+
+      &-right{
+        right: 10px;
+      }
+    }
+  }
+}

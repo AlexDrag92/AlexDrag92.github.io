@@ -1,0 +1,25 @@
+@mixin clearfix(){
+  &::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin container(){
+	max-width: 1170px;
+	margin: 0 auto;
+
+  @media #{$large-media-query}{
+    max-width: $large-container-width;
+    padding: 0 $large-paddings;
+  }
+
+  @media #{$medium-media-query}{
+    max-width: $medium-container-width;
+  }
+
+  @media #{$small-media-query}{
+    max-width: $small-container-width;
+  }
+}
