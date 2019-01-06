@@ -57,3 +57,10 @@ body{
 }
 
 
+.page-link:nth-child(4){
+  background: #2D2523;
+  font: normal normal normal 25px/100% 'Times', sans-serif;
+  color: #F1CDB3;
+}
+
+
